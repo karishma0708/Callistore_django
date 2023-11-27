@@ -1,0 +1,53 @@
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calligraphy | Swrily Script Studio | Pune</title>
+    <link rel="stylesheet" href="{% static 'asset/css/bootstrap.min.css' %}" />
+    <style>
+        body {
+            background-color: #f0f0f0; /* Set your desired color code */
+            background-image: url("{% static 'asset/images/bg3.png' %}"); /* Replace with the path to your image */
+            background-size: cover; /* Adjusts the image to cover the entire background */
+            background-repeat: no-repeat; /* Prevents the image from repeating */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row"> 
+            <div class="col-md-12">
+                <a href="/home" style="text-decoration: none;">Home</a>
+            </div> 
+            <div class="col-md-4 mt-5 p-4 shadow mx-auto">
+                <h2 style="text-align: center;">Login</h2>
+                {% if errmsg %}
+                    <div class="alert alert-danger">
+                        {{errmsg}}
+                    </div>
+
+                {% endif %}
+                <form method="POST" action="/login">
+                    {% csrf_token %}
+                    <div class="col-mb-4">
+                        <label for="input" class="form-label">Username:</label>
+                        <input type="email" class="form-control" id="input1" placeholder="enter username" name="uname">
+                    </div>
+                    <div class="mb-3">
+                        <label for="input2" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="input2" placeholder="enter password" name="upass">
+                    </div>
+
+                    <div class="mb-3">
+                        <input type="submit" value="Login" class="btn" style="background-color:#573d2b;color: white;">
+                        Not user?<a href="/register" style="text-decoration: none;">Register</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

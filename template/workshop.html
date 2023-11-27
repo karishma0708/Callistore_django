@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block 'main' %}
+
+<div class="col-md-12 mt-4">
+    <h3 style="text-decoration: underline;text-align: center;">Workshop</h3>
+</div>
+
+<p style="margin-top: 5%;text-align: justify;">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+    Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+    Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+
+    		
+		<video width="500px" height="300px"  style="margin-left: 30%;"  class="vid"autoplay muted controls loop >
+			<source src="{% static 'asset/images/vi.mp4' %}" type="video/mp4">
+		</video> 
+
+       <p style="text-align: center;margin-top: 23px;"><a href="/form_cont"><button class="btn bg-danger-subtle">Contact us</button></a></p>
+        
+
+{% endblock 'main' %}   

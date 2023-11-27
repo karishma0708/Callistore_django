@@ -1,0 +1,110 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calligraphy | Swrily Script Studio | Pune</title>
+    <link rel="stylesheet" href="{% static 'asset/css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'asset/css/style.css' %}" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<style>
+    
+        .nav-item:hover{
+	background-color:white;
+	color:#78C1F3;
+    border-radius: 4px;
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 mt-2 bg-danger-subtle text-emphasis-danger fixed-top" > <!--col 1 start-->
+                <p style="text-align: center;" class="pt-3" >Learn calligraphy! Join free mini course now&nbsp;&nbsp;
+                    <button type="button" class="btn bg-white" style="color: #78C1F3; ">Join Now</button>
+                </p>
+            </div><!--col 1 end-->
+        </div><!--row end-->
+
+
+        <div class="row">
+            <div class="col mt-5 ">
+                <img src="{% static 'asset/images/logo1.png' %}" width="40%" style="margin-left: 30%;"/>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <nav class="navbar bg-body-tertiary">
+                    <div class="container-fluid offset-md-4">
+                      <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn bg-danger-subtle" type="submit">Search</button>
+                      </form>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+        <div class="row mt-5  ">
+            <div class="col-md-12">
+                <nav class="navbar navbar-expand-lg bg-danger-subtle"  >
+                    <div class="container-fluid offset-md-3 ">
+                        <a class="navbar-brand" href="/home" >Home</a>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                        <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="/about">About</a>
+                                </li>
+                                
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Services
+                                    </a>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="/catfilter/1">Handwritten Letter</a></li>
+                                            <li><a class="dropdown-item" href="/catfilter/2">Custome Engrave</a></li>
+                                            <li><a class="dropdown-item" href="/catfilter/3">Envelope Addressing</a></li>
+                                            <li><a class="dropdown-item" href="/catfilter/4">Digital Art</a></li>
+                                            <li><a class="dropdown-item" href="/catfilter/5">Frame</a></li>
+                                        </ul>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="/gifts">Gifts</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="/workshop">Workshop</a>
+                                </li>
+
+                                {% if user.is_authenticated %}
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/logout">Logout</a>
+                                </li>
+                                {% else %}
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/login">Login</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/register">Register</a>
+                                </li>
+                               {% endif %}
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/viewcart" style="font-size: 18px;">
+                                        <i class="bi bi-bag-heart"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                            
+                      </div>
+                
+                    </div>
+                   
+                  </nav>
+            </div>
+        </div> <!--nav end-->

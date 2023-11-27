@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block 'main' %}
+
+<!--cart content -->
+<div class="row mt-5">
+    <div class="col-md-12">
+        <h5 class=" bg-danger-subtle  p-2 " style="text-align: center;">Customer Details</h5>
+        {% for x in products %}
+        {% if forloop.counter == 1 %}<br>
+        <p style="text-align: center;"><strong>Name:</strong>&nbsp;&nbsp;&nbsp;{{x.uid.username}}</p>
+        <p  style="text-align: center;"><strong>Mobile:</strong>&nbsp;&nbsp;&nbsp;1234567890</p>
+        <p  style="text-align: center;"><strong>Email:</strong>&nbsp;&nbsp;&nbsp; {{x.uid.email}}</p>
+        {% endif %}
+        {% endfor %}
+       
+            
+    </div>
+
+    <div class="col-md-12">
+        
+        <h5 class="bg-danger-subtle  p-2 " style="text-align: center;">Product Details</h5>
+        {% for x in products %}
+
+       <div class="row">
+            <div class="col-md-4">
+                <img src="{{x.pid.pimage.url}}" width="100%" />
+            </div>
+        
+
+            <div class="col-md-4 mt-5">
+                <p><strong>Product Name:</strong> &nbsp;&nbsp;&nbsp;{{x.pid.name}}</p>
+                <p><strong>Price:</strong>&nbsp;&nbsp;&nbsp;Rs.{{x.pid.price}}</p>
+                {% if x.pid.cat == 1 %}
+                <p><strong>Category:</strong>&nbsp;&nbsp;&nbsp;Handwritten Letter</p>
+                {% elif x.pid.cat == 2 %}
+                <p><strong>Category:</strong>&nbsp;&nbsp;&nbsp;Custome Engraving</p>
+                {% elif x.pid.cat == 3 %}
+                <p><strong>Category:</strong>&nbsp;&nbsp;&nbsp;Envelope Addressing</p>
+                {% elif x.pid.cat == 4 %}
+                <p><strong>Category:</strong>&nbsp;&nbsp;&nbsp;Digital Art</p>
+                {% else %}
+                <p><strong>Category:</strong>&nbsp;&nbsp;&nbsp;Frame</p>
+                {% endif %}
+                <p><strong>Product description:</strong>&nbsp;&nbsp;&nbsp;{{x.pdetails}}</p>
+                <a href="/remove/{{x.id}}"><button class="btn btn-danger">Remove</button></a>&nbsp;&nbsp;&nbsp;
+
+            </div>
+
+        </div>
+        <hr>
+        {% endfor %}
+    </div>
+    
+    <div class="col-md-12 mt-5">
+        <div class="row">
+            <div class="col-md-6">
+                <table class="table" border="1">
+                        <tr>
+                            <th colspan="2" class="bg-danger-subtle text-center p-2">Total Amount</th>
+                        </tr>
+                        <tr>
+                            <td><strong>Total {{ n }} items:</strong></td>
+                            <td>Rs.{{ total }}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><hr></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Total:</strong></td>
+                            <td>Rs.{{ total }}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="text-center">
+                                <a href="/makepayment">
+                                    <button class="btn btn-danger">Make payment</button>
+                                </a>
+                            </td>
+                        </tr>
+                </table>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+<!--cart section ends-->
+
+{% endblock 'main' %}
